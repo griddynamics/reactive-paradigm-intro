@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 import java.util.stream.IntStream;
 
 
-public class P03_01_DesignForFailureTryCatch {
+public class P04_01_DesignForFailureTryCatch {
 
     private int checkNumber(int value) {
         if (value == 5) {

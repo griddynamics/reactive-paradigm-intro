@@ -8,8 +8,10 @@ import reactor.core.scheduler.Schedulers;
 
 import java.util.stream.IntStream;
 
+import static com.griddynamics.techtalk.reactor.util.Util.sleep;
+
 @Log4j2
-public class P04_AsynchronousCall {
+public class P05_AsynchronousCall {
 
     /*
      * asynchronous work
@@ -23,8 +25,7 @@ public class P04_AsynchronousCall {
     }
 
     @Test
-    public void publishOnTest() throws InterruptedException {
-
+    public void publishOnTest() {
         final Flux<String> flux = Flux
                 .range(1, 2)
                 .map(i -> {
@@ -39,12 +40,11 @@ public class P04_AsynchronousCall {
 
         flux.subscribe(log::info);
 
-        Thread.sleep(2000);
+        sleep(2);
     }
 
     @Test
-    public void subscribeOnTest() throws InterruptedException {
-
+    public void subscribeOnTest() {
         final Flux<String> flux = Flux
                 .range(1, 2)
                 .map(i -> {
@@ -59,6 +59,6 @@ public class P04_AsynchronousCall {
 
         flux.subscribe(log::info);
 
-        Thread.sleep(2000);
+        sleep(2);
     }
 }
