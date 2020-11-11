@@ -1,12 +1,23 @@
 <configuration>
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="STDOUT_WITH_THREAD" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%highlight([%thread]) %msg%n</pattern>
         </encoder>
     </appender>
 
-    <root level="info">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.griddynamics.techtalk.reactor.subscription.service" level="INFO">
         <appender-ref ref="STDOUT" />
-    </root>
+    </logger>
+
+    <logger name="com.griddynamics.techtalk.reactor.P05_AsynchronousCall" level="INFO">
+        <appender-ref ref="STDOUT_WITH_THREAD" />
+    </logger>
+
 </configuration>

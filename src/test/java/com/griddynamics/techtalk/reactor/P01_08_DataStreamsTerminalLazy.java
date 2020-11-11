@@ -9,11 +9,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-public class P02_05_DataStreamsTerminalLazy {
+public class P01_08_DataStreamsTerminalLazy {
 
     @Test
     public void streamExecutionExample() {
-
         Stream<String> str = Stream.of("a", "b", "c")
                 .peek(p-> System.out.println("Output stream: " + p));
         System.out.println("Nothing!");
@@ -21,7 +20,6 @@ public class P02_05_DataStreamsTerminalLazy {
 
     @Test
     public void streamExecutionWorkExample() {
-
         List<String> str = Stream.of("a", "b", "c")
                 .peek(p-> System.out.println("Output stream: " + p))
                 .collect(Collectors.toList());
@@ -36,7 +34,6 @@ public class P02_05_DataStreamsTerminalLazy {
 
     @Test
     public void publisherExecutionExample() {
-
         Flux<String> str = Flux.just("a", "b", "c")
                 .doOnNext(p-> System.out.println("Output publisher: " + p));
         System.out.println("Nothing!");

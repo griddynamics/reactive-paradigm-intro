@@ -4,7 +4,7 @@ import org.junit.Test;
 import reactor.core.publisher.Mono;
 
 
-public class P03_03_DesignForFailureSwitchEmpty {
+public class P04_03_DesignForFailureSwitchEmpty {
 
     /*
      * switchIfEmpty example

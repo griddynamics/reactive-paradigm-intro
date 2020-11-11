@@ -6,22 +6,22 @@ import reactor.core.publisher.Flux;
 import java.util.stream.IntStream;
 
 
-public class P02_01_DataStreamModificationMap {
+public class P01_06_DataStreamModificationFilter {
 
     /*
-    * Map example
-    * */
+     * Filter example
+     * */
     @Test
-    public void mapStream() {
-        IntStream.range(5, 8)
-                .map(i -> i * 10)
+    public void filterStream() {
+        IntStream.range(5, 16)
+                .filter(item -> item > 10)
                 .forEach(i -> System.out.printf("i=%s%n", i));
     }
 
     @Test
-    public void mapPublisher() {
-        Flux.range(5, 3)
-                .map(i -> i * 10)
+    public void filterPublisher() {
+        Flux.range(5, 10)
+                .filter(item -> item > 10)
                 .subscribe(i -> System.out.printf("i=%s%n", i));
     }
 }

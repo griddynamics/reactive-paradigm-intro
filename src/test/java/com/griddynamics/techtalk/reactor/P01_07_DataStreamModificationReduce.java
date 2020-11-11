@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 import java.util.stream.IntStream;
 
 
-public class P02_04_DataStreamModificationReduce {
+public class P01_07_DataStreamModificationReduce {
     /*
      * Reduce example
      * */

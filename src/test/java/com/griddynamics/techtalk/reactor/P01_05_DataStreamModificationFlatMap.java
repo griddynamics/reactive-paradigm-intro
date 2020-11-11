@@ -5,9 +5,10 @@ import reactor.core.publisher.Flux;
 
 import java.util.stream.IntStream;
 
+import static com.griddynamics.techtalk.reactor.util.Util.sleep;
 import static java.time.Duration.ofMillis;
 
-public class P02_02_DataStreamModificationFlatMap {
+public class P01_05_DataStreamModificationFlatMap {
     /*
      * FlatMap example
      * */
@@ -19,12 +20,12 @@ public class P02_02_DataStreamModificationFlatMap {
     }
 
     @Test
-    public void flatMapPublisher() throws InterruptedException {
+    public void flatMapPublisher() {
         Flux.range(5, 3)
                 .flatMap(item -> Flux.just(item * 10, "two", "three").delayElements(ofMillis(1)))
                 .subscribe(i -> System.out.printf("i=%s%n", i));
 
-        Thread.sleep(2000);
+        sleep(2);
     }
 
 }
